@@ -1,4 +1,4 @@
-import { createOrder, getOrders } from "../models/order.model.js";
+import { createOrder, getOrders, getOrderById, deleteOrderById } from "../models/order.model.js";
 
 export const createOrderCtrl = (req, res) => {
   const userId = req.user.id;
@@ -14,3 +14,14 @@ export const getOrdersCtrl = (_req, res) => {
 
   res.status(200).json(orders);
 };
+
+export const getOrderByIdCtrl = (req, res) => {
+  const orderId = req.params.id;
+  const order = getOrderById(orderId);
+  res.status(200).json(order);
+}
+export const deletedOrderById = (req, res) => {
+  const orderId = req.params.id;
+  const order = deleteOrderById(orderId);
+  res.status(200).json(order);
+}

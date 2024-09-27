@@ -136,6 +136,13 @@ export const services = (session) => {
         const coffe = service.coffee;
 
         // ! IMPLEMENTAR LÓGICA PARA CREAR UNA ORDEN
+
+        const response = await fetch("", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            };
+
       });
     });
   });
